@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .inputs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.625rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: #334155;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+        }
+
+        .operadores-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-operador {
+            background-color: #f8fafc;
+            color: #334155;
+            font-weight: 700;
+            padding: 0.5rem 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .btn-operador.ativo {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.625rem 0;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .resultado {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 1.125rem;
+        }
+    </style>
+</head>
+</style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Calculadora</h1>
+
+        <div class="inputs-container">
+            <input type="number" id="num1" placeholder="Digite o primeiro termo">
+            <input type="number" id="num2" placeholder="Digite o segundo termo">
+        </div>
+
+        <div class="operadores-grid">
+            <button class="btn-operador ativo" data-op="+">+</button>
+            <button class="btn-operador" data-op="-">-</button>
+            <button class="btn-operador" data-op="*">X</button>
+            <button class="btn-operador" data-op="/">/</button>
+        </div>
+
+        <button id="btnExecutar" class="btn-submit">Executar</button>
+
+        <div id="resultado" class="resultado">Resultado: </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
